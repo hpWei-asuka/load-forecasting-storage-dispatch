@@ -1,0 +1,215 @@
+{
+  "requested_days": 7,
+  "requested_dates": [
+    "2010-01-04",
+    "2010-01-05",
+    "2010-01-06",
+    "2010-01-07",
+    "2010-01-08",
+    "2010-01-09",
+    "2010-01-10"
+  ],
+  "data_excluded_days": 0,
+  "data_excluded_dates": [],
+  "forecast_unavailable_days": 0,
+  "forecast_unavailable_dates": [],
+  "common_valid_days": 3,
+  "common_valid_dates": [
+    "2010-01-08",
+    "2010-01-09",
+    "2010-01-10"
+  ],
+  "coverage_rate": 0.42857142857142855,
+  "cost_totals_on_common_dates": {
+    "no_storage": {
+      "actual_cost": 77.95078666666666,
+      "savings": 0.0,
+      "savings_rate": 0.0
+    },
+    "fixed_rule": {
+      "actual_cost": 76.0481550877193,
+      "savings": 1.9026315789473642,
+      "savings_rate": 0.024408112609349306
+    },
+    "optimized": {
+      "actual_cost": 75.09289198666667,
+      "savings": 2.857894679999987,
+      "savings_rate": 0.03666280742259758
+    }
+  },
+  "forecast": {
+    "valid_dates": [
+      "2010-01-04",
+      "2010-01-05",
+      "2010-01-06",
+      "2010-01-07",
+      "2010-01-08",
+      "2010-01-09",
+      "2010-01-10"
+    ],
+    "daily": [
+      {
+        "date": "2010-01-04",
+        "mae_kw": 0.9304847222222222,
+        "rmse_kw": 1.1793206568668941,
+        "sample_count": 24
+      },
+      {
+        "date": "2010-01-05",
+        "mae_kw": 0.6217833333333332,
+        "rmse_kw": 0.8830286104378792,
+        "sample_count": 24
+      },
+      {
+        "date": "2010-01-06",
+        "mae_kw": 0.7119,
+        "rmse_kw": 0.9813905032222467,
+        "sample_count": 24
+      },
+      {
+        "date": "2010-01-07",
+        "mae_kw": 0.4083069444444443,
+        "rmse_kw": 0.5702779075201454,
+        "sample_count": 24
+      },
+      {
+        "date": "2010-01-08",
+        "mae_kw": 0.49265416666666667,
+        "rmse_kw": 0.7224181006701909,
+        "sample_count": 24
+      },
+      {
+        "date": "2010-01-09",
+        "mae_kw": 0.5657972222222222,
+        "rmse_kw": 0.9131797893036138,
+        "sample_count": 24
+      },
+      {
+        "date": "2010-01-10",
+        "mae_kw": 1.1777875,
+        "rmse_kw": 1.4364941396633113,
+        "sample_count": 24
+      }
+    ],
+    "overall": {
+      "mae_kw": 0.7012448412698413,
+      "rmse_kw": 0.9912604964849222,
+      "sample_count": 168
+    }
+  },
+  "strategy_failures": {
+    "no_storage": {
+      "solve_failed_days": 0,
+      "plan_invalid_days": 0,
+      "replay_infeasible_days": 0
+    },
+    "fixed_rule": {
+      "solve_failed_days": 0,
+      "plan_invalid_days": 0,
+      "replay_infeasible_days": 2
+    },
+    "optimized": {
+      "solve_failed_days": 0,
+      "plan_invalid_days": 0,
+      "replay_infeasible_days": 3
+    }
+  },
+  "failed_days": 4,
+  "failures": [
+    {
+      "date": "2010-01-04",
+      "strategy": "fixed_rule",
+      "status": "replay_infeasible",
+      "solver_status": "not_applicable",
+      "plan_status": "valid",
+      "plan_valid": true,
+      "replay_valid": false,
+      "predicted_cost": 23.647309473684217,
+      "actual_cost": null,
+      "savings": null,
+      "savings_rate": null,
+      "solve_seconds": 0.0,
+      "failure_reason": "discharge_exceeds_load_kw",
+      "first_failure_timestamp": "2010-01-04T17:00:00",
+      "violation": 0.1779666666666666,
+      "currency": "CNY"
+    },
+    {
+      "date": "2010-01-04",
+      "strategy": "optimized",
+      "status": "replay_infeasible",
+      "solver_status": "optimal",
+      "plan_status": "optimal",
+      "plan_valid": true,
+      "replay_valid": false,
+      "predicted_cost": 23.328888328,
+      "actual_cost": null,
+      "savings": null,
+      "savings_rate": null,
+      "solve_seconds": 0.051967899999908695,
+      "failure_reason": "discharge_exceeds_load_kw",
+      "first_failure_timestamp": "2010-01-04T21:00:00",
+      "violation": 0.27479999999999993,
+      "currency": "CNY"
+    },
+    {
+      "date": "2010-01-05",
+      "strategy": "optimized",
+      "status": "replay_infeasible",
+      "solver_status": "optimal",
+      "plan_status": "optimal",
+      "plan_valid": true,
+      "replay_valid": false,
+      "predicted_cost": 17.351921789000002,
+      "actual_cost": null,
+      "savings": null,
+      "savings_rate": null,
+      "solve_seconds": 0.04556539999975939,
+      "failure_reason": "discharge_exceeds_load_kw",
+      "first_failure_timestamp": "2010-01-05T20:00:00",
+      "violation": 0.4501666666666666,
+      "currency": "CNY"
+    },
+    {
+      "date": "2010-01-06",
+      "strategy": "optimized",
+      "status": "replay_infeasible",
+      "solver_status": "optimal",
+      "plan_status": "optimal",
+      "plan_valid": true,
+      "replay_valid": false,
+      "predicted_cost": 24.444808599,
+      "actual_cost": null,
+      "savings": null,
+      "savings_rate": null,
+      "solve_seconds": 0.043275399999856745,
+      "failure_reason": "discharge_exceeds_load_kw",
+      "first_failure_timestamp": "2010-01-06T19:00:00",
+      "violation": 0.41993333333333327,
+      "currency": "CNY"
+    },
+    {
+      "date": "2010-01-07",
+      "strategy": "fixed_rule",
+      "status": "replay_infeasible",
+      "solver_status": "not_applicable",
+      "plan_status": "valid",
+      "plan_valid": true,
+      "replay_valid": false,
+      "predicted_cost": 19.69488947368421,
+      "actual_cost": null,
+      "savings": null,
+      "savings_rate": null,
+      "solve_seconds": 0.0,
+      "failure_reason": "discharge_exceeds_load_kw",
+      "first_failure_timestamp": "2010-01-07T17:00:00",
+      "violation": 0.40336666666666654,
+      "currency": "CNY"
+    }
+  ],
+  "cost_unit": "CNY",
+  "power_unit": "kW",
+  "energy_unit": "kWh",
+  "comparison_basis": "仅三策略共同有效日期；总费用计算整体节省率",
+  "scope": "独立日实验；仅购电运行费用；不包含设备投资与老化成本"
+}

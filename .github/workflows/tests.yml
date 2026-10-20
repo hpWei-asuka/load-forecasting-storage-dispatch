@@ -1,0 +1,47 @@
+name: Tests
+
+on:
+  push:
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  test:
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-latest, windows-latest]
+    runs-on: ${{ matrix.os }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: astral-sh/setup-uv@v6
+        with:
+          enable-cache: true
+          python-version: '3.12'
+      - run: uv sync --locked
+      - name: Install Chinese fonts on Linux
+        if: runner.os == 'Linux'
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y fonts-noto-cjk
+      - name: Install Chinese font on Windows
+        if: runner.os == 'Windows'
+        shell: pwsh
+        run: |
+          $fontDir = Join-Path $env:LOCALAPPDATA 'Microsoft\Windows\Fonts'
+          New-Item -ItemType Directory -Path $fontDir -Force | Out-Null
+          $fontFile = Join-Path $fontDir 'NotoSansCJKsc-Regular.otf'
+          Invoke-WebRequest -Uri 'https://raw.githubusercontent.com/notofonts/noto-cjk/main/Sans/OTF/SimplifiedChinese/NotoSansCJKsc-Regular.otf' -OutFile $fontFile
+          $fontKey = 'HKCU:\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Fonts'
+          New-Item -Path $fontKey -Force | Out-Null
+          New-ItemProperty -Path $fontKey -Name 'Noto Sans CJK SC (OpenType)' -Value $fontFile -PropertyType String -Force | Out-Null
+      - run: uv run load-storage doctor
+      - run: uv run pytest
+      - name: Check documentation
+        if: runner.os == 'Windows'
+        shell: pwsh
+        run: |
+          ./tests/Test-ProductDesign.ps1
+          ./tests/Test-TechnicalPlan.ps1

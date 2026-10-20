@@ -1,0 +1,3 @@
+# Preserve the submission bundle byte-for-byte for its SHA-256 manifest.
+提交材料/** -text
+提交材料.zip -text

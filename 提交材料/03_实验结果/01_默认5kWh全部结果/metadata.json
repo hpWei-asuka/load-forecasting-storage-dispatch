@@ -1,0 +1,60 @@
+{
+  "python": "3.12.10",
+  "platform": "Windows-11-10.0.26200-SP0",
+  "libraries": {
+    "load-storage": "0.1.0",
+    "pandas": "2.3.3",
+    "numpy": "2.5.4",
+    "PuLP": "3.3.2",
+    "matplotlib": "3.11.2"
+  },
+  "git": {
+    "commit": "71f3301eceecc5b23ba016e5d3710203e832ff32",
+    "dirty": false,
+    "status": ""
+  },
+  "run_id": "baseline_storage_v01_20261020T113940Z_9a15e52d",
+  "started_at_utc": "2026-10-20T11:39:40.518608+00:00",
+  "config_sha256": "e9443a6bec17e5dd686c2a2094116ce9a335d9931fe6971c1f4b694e1a205553",
+  "tariff_source": "实验情景，非该家庭真实电价",
+  "battery_source": "实验情景，非该家庭真实设备",
+  "currency": "CNY",
+  "cbc": {
+    "status": "ok",
+    "path": "D:\\大学\\竞赛\\2027美赛\\代码组\\.venv\\Lib\\site-packages\\pulp\\apis\\../solverdir/cbc/win/i64/cbc.exe",
+    "version": "2.10.3",
+    "objective": 2.0,
+    "problem_status": "Optimal",
+    "solution_status": "Optimal Solution Found"
+  },
+  "plotting": {
+    "font_family": "Microsoft YaHei",
+    "font_path": "C:\\Windows\\Fonts\\msyh.ttc",
+    "missing_glyphs": [],
+    "ok": true
+  },
+  "data": {
+    "path": "D:\\大学\\竞赛\\2027美赛\\代码组\\data\\raw\\household_power_consumption.txt",
+    "sha256": "4259c9d7ece5dbee9ab8d53682baac68d791c864f0f64a52b4043cb3b90894b7",
+    "size_bytes": 132960755,
+    "declared_source_url": "https://archive.ics.uci.edu/dataset/235/individual+household+electric+power+consumption",
+    "source_record": {
+      "dataset_url": "https://archive.ics.uci.edu/dataset/235/individual+household+electric+power+consumption",
+      "download_url": "https://archive.ics.uci.edu/static/public/235/individual+household+electric+power+consumption.zip",
+      "downloaded_at_utc": "2026-10-20T11:23:42.674897+00:00",
+      "sha256": "4259c9d7ece5dbee9ab8d53682baac68d791c864f0f64a52b4043cb3b90894b7",
+      "archive_sha256": "9f84b46ade8a2d8e1286ec4b2b6c2987a45a755c59f263be3b3b3d10dfbda3ff",
+      "archive_member": "household_power_consumption.txt",
+      "size_bytes": 132960755,
+      "power_field": "Global_active_power",
+      "power_unit": "kW"
+    },
+    "downloaded_at_utc": "2026-10-20T11:23:42.674897+00:00",
+    "provenance_note": "已校验下载记录",
+    "power_field": "Global_active_power",
+    "power_unit": "kW",
+    "time_basis": "数据记录的当地钟表时间，无时区转换"
+  },
+  "completed_at_utc": "2026-10-20T11:39:54.191629+00:00",
+  "status": "completed_with_failures"
+}
