@@ -59,7 +59,7 @@ from pathlib import Path
 import sys
 import tomllib
 
-config = tomllib.loads(sys.stdin.read())
+config = tomllib.loads(sys.stdin.buffer.read().decode('utf-8-sig'))
 default = tomllib.loads(Path(sys.argv[1]).read_text(encoding='utf-8'))
 assert config == default, '技术方案示例与configs/example.toml不一致'
 print(json.dumps(config))

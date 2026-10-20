@@ -10,10 +10,3 @@ data/raw/*
 data/processed/*
 !data/processed/.gitkeep
 outputs/
-
-AGENT.md
-AGENTS.md
-plan.md
-todo.md
-reports/
-tests/Test-AgentRules.ps1
