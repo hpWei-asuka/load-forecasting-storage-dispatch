@@ -1,3 +1,3 @@
 # Keep recorded input and experiment hashes stable across platforms.
 configs/*.toml text eol=lf
-docs/experiments/*.csv -text
+docs/experiments/*.csv -text whitespace=cr-at-eol
