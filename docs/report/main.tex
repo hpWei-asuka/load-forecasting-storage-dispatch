@@ -32,7 +32,7 @@
 \vspace{0.5em}
 {\large 模型、回测与可执行性分析}\par
 \vspace{0.4em}
-{\small 项目报告\quad 2026 年 10 月}
+{\small 项目报告}
 \end{center}
 \begin{center}{\heiti\bfseries 摘\quad 要}\end{center}
 针对家庭储能的日前充放电安排，本文以公开家庭用电记录为输入，构建负荷预测、混合整数线性规划和真实负荷回测相衔接的实验流程。采用前一日同小时功率预测次日负荷，在假设分时电价和电池参数下比较无储能、固定规则与优化调度三种策略。2010 年 1 月 4 日至 10 日共 168 小时的预测平均绝对误差为 0.701245 kW，均方根误差为 0.991260 kW。默认 5 kWh 情景的七日日前优化均求得最优解，但仅两日满足三种策略共同可执行，覆盖率为 28.57\%。在这两日，优化策略购电费用为 50.050614 元，比无储能减少 7.0747\%。该结果属于事后筛选有效日期的条件比较，不能代表全周收益。实验表明，预测条件下的最优性需要与真实负荷下的可执行性分别检验；当前结果主要用于验证流程和识别预测误差对调度的影响。
@@ -99,7 +99,7 @@
 &E^{\min}\leq E_t\leq E^{\max}\quad(t=0,\ldots,24),\label{eq:bounds}\\
 &E_0=E_{24}=E^{\mathrm{init}}.\label{eq:terminal}
 \end{align}
-式\eqref{eq:balance}保持功率平衡，并限制放电不超过预测负荷；式\eqref{eq:mode}禁止同一时段同时充放电；式\eqref{eq:energy}考虑双向转换损耗；式\eqref{eq:bounds}和式\eqref{eq:terminal}约束电量范围及日末恢复。模型采用 PuLP 建模\cite{pulp}、CBC 求解\cite{cbc}，单线程、单日时限 30 s。程序同时检查最优性状态及日志，并独立重算功率、电量和费用约束，绝对容差为 $10^{-6}$。
+式\eqref{eq:balance}保持功率平衡，并限制放电不超过预测负荷；式\eqref{eq:mode}禁止同一时段同时充放电；式\eqref{eq:energy}考虑双向转换损耗；式\eqref{eq:bounds}和式\eqref{eq:terminal}约束电量范围及日末恢复。模型采用 PuLP 建模、CBC 求解，单线程、单日时限 30 s。程序同时检查最优性状态及日志，并独立重算功率、电量和费用约束，绝对容差为 $10^{-6}$。
 
 \subsection{对照策略与真实负荷回测}
 无储能策略令 $c_t=d_t=0$。固定规则在 00:00--07:00 充电、17:00--22:00 放电，按照窗口内的时间顺序安排功率；循环电量同时受设备边界和预测负荷限制，并满足初末电量一致。三种策略使用同一负荷、电价与评价日期，两种储能策略使用相同电池参数。
@@ -192,13 +192,11 @@ r_s=1-\frac{\sum_{D\in\mathcal C}C_{D,s}}
 \begin{thebibliography}{9}
 \small
 \bibitem{uci} Hebrail G, Berard A. Individual Household Electric Power Consumption [DS/OL]. UCI Machine Learning Repository, 2006. DOI: \href{https://doi.org/10.24432/C58K54}{10.24432/C58K54}.
-\bibitem{pulp} COIN-OR. Optimization with PuLP [EB/OL]. \url{https://coin-or.github.io/pulp/}. 访问日期：2026-10-21.
-\bibitem{cbc} COIN-OR. Cbc: COIN-OR Branch-and-Cut Solver [CP/OL]. \url{https://github.com/coin-or/Cbc}. 访问日期：2026-10-21.
 \end{thebibliography}
 
 \section*{附录\quad 复现与实验记录}
 \small
-项目使用 Python 3.12，依赖版本由 \texttt{uv.lock} 锁定。报告对应实验于 2026 年 10 月 21 日重新运行，环境为 Python 3.12.10、PuLP 3.3.2、CBC 2.10.3。源码、配置和依赖与仓库提交 \texttt{1333978} 一致；运行时尚未提交的文件仅为报告文档。下载原始数据后，计算可离线完成。在仓库根目录执行：
+项目使用 Python 3.12，依赖版本由 \texttt{uv.lock} 锁定。报告对应实验已重新运行，环境为 Python 3.12.10、PuLP 3.3.2、CBC 2.10.3。源码、配置和依赖与仓库提交 \texttt{1333978} 一致；运行时尚未提交的文件仅为报告文档。下载原始数据后，计算可离线完成。在仓库根目录执行：
 \begin{lstlisting}
 uv sync --locked
 uv run load-storage doctor
