@@ -1,0 +1,162 @@
+{
+  "schema_version": 1,
+  "units": {
+    "power": "kW",
+    "energy": "kWh",
+    "cost": "CNY"
+  },
+  "data": {
+    "sha256": "4259c9d7ece5dbee9ab8d53682baac68d791c864f0f64a52b4043cb3b90894b7",
+    "size_bytes": 132960755,
+    "declared_source_url": "https://archive.ics.uci.edu/dataset/235/individual+household+electric+power+consumption",
+    "power_field": "Global_active_power",
+    "power_unit": "kW",
+    "time_basis": "数据记录的当地钟表时间，无时区转换"
+  },
+  "code": {
+    "commit": "1333978dc45b7f5f90069e4de448835eaedb6fb6",
+    "source_and_configs_unchanged_from_commit": true,
+    "run_worktree_note": "运行时仅有未跟踪的报告文档；源码、配置与锁定依赖均与所列提交一致。"
+  },
+  "scenarios": {
+    "5kwh": {
+      "requested_dates": [
+        "2010-01-04",
+        "2010-01-05",
+        "2010-01-06",
+        "2010-01-07",
+        "2010-01-08",
+        "2010-01-09",
+        "2010-01-10"
+      ],
+      "common_valid_dates": [
+        "2010-01-05",
+        "2010-01-10"
+      ],
+      "coverage_rate": 0.2857142857142857,
+      "cost_totals_on_common_dates": {
+        "no_storage": {
+          "actual_cost": 53.86114,
+          "savings": 0.0,
+          "savings_rate": 0.0
+        },
+        "fixed_rule": {
+          "actual_cost": 51.324297894736844,
+          "savings": 2.5368421052631547,
+          "savings_rate": 0.04709967344291552
+        },
+        "optimized": {
+          "actual_cost": 50.050613658,
+          "savings": 3.8105263419999957,
+          "savings_rate": 0.0707472278158241
+        }
+      },
+      "strategy_failures": {
+        "no_storage": {
+          "solve_failed_days": 0,
+          "plan_invalid_days": 0,
+          "replay_infeasible_days": 0
+        },
+        "fixed_rule": {
+          "solve_failed_days": 0,
+          "plan_invalid_days": 0,
+          "replay_infeasible_days": 3
+        },
+        "optimized": {
+          "solve_failed_days": 0,
+          "plan_invalid_days": 0,
+          "replay_infeasible_days": 5
+        }
+      },
+      "scope": "独立日实验；仅购电运行费用；不包含设备投资与老化成本",
+      "comparison_basis": "仅三策略共同有效日期；总费用计算整体节省率",
+      "config": "configs/example.toml",
+      "config_sha256": "65a40461cee09bcbe80931a68e0e393889c91004b74deeac0a8e443d52ec3fb6",
+      "run_id": "baseline_storage_v01_20261021T133259Z_d940b14e",
+      "run_started_at_utc": "2026-10-21T13:32:59.674695+00:00",
+      "forecast": {
+        "mae_kw": 0.7012448412698413,
+        "rmse_kw": 0.9912604964849222,
+        "sample_count": 168
+      }
+    },
+    "3kwh": {
+      "requested_dates": [
+        "2010-01-04",
+        "2010-01-05",
+        "2010-01-06",
+        "2010-01-07",
+        "2010-01-08",
+        "2010-01-09",
+        "2010-01-10"
+      ],
+      "common_valid_dates": [
+        "2010-01-08",
+        "2010-01-09",
+        "2010-01-10"
+      ],
+      "coverage_rate": 0.42857142857142855,
+      "cost_totals_on_common_dates": {
+        "no_storage": {
+          "actual_cost": 77.95078666666666,
+          "savings": 0.0,
+          "savings_rate": 0.0
+        },
+        "fixed_rule": {
+          "actual_cost": 76.0481550877193,
+          "savings": 1.9026315789473642,
+          "savings_rate": 0.024408112609349306
+        },
+        "optimized": {
+          "actual_cost": 75.09289198666667,
+          "savings": 2.857894679999987,
+          "savings_rate": 0.03666280742259758
+        }
+      },
+      "strategy_failures": {
+        "no_storage": {
+          "solve_failed_days": 0,
+          "plan_invalid_days": 0,
+          "replay_infeasible_days": 0
+        },
+        "fixed_rule": {
+          "solve_failed_days": 0,
+          "plan_invalid_days": 0,
+          "replay_infeasible_days": 2
+        },
+        "optimized": {
+          "solve_failed_days": 0,
+          "plan_invalid_days": 0,
+          "replay_infeasible_days": 3
+        }
+      },
+      "scope": "独立日实验；仅购电运行费用；不包含设备投资与老化成本",
+      "comparison_basis": "仅三策略共同有效日期；总费用计算整体节省率",
+      "config": "configs/capacity3.toml",
+      "config_sha256": "ac613905e107b0bbc2eff34995b9b2c71369d680b65fa53370a7be912fd2abd2",
+      "run_id": "capacity3_demo_20261021T133359Z_61548dda",
+      "run_started_at_utc": "2026-10-21T13:34:00.011499+00:00",
+      "forecast": {
+        "mae_kw": 0.7012448412698413,
+        "rmse_kw": 0.9912604964849222,
+        "sample_count": 168
+      }
+    }
+  },
+  "environment": {
+    "python": "3.12.10",
+    "libraries": {
+      "load-storage": "0.1.0",
+      "pandas": "2.3.3",
+      "numpy": "2.5.4",
+      "PuLP": "3.3.2",
+      "matplotlib": "3.11.2"
+    },
+    "cbc_version": "2.10.3"
+  },
+  "files_sha256": {
+    "cost_comparison.csv": "1493327a13e108df6f8b1eb35c9e33166cd80ed0dca81295d9b03453cb1148ef",
+    "predictions.csv": "f2731faf95bba04ec6f88c666f4e77a3b63caf951fd2365d7ae324fb10e9036a",
+    "schedule_2010-01-10.csv": "628e1043837fba1e0785086b22de6069d0507a403f74099bc45ed3a3de9882ae"
+  }
+}
