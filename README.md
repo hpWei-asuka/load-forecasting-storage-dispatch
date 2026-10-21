@@ -14,19 +14,19 @@ Python 3.12 本地分析工具。读取 UCI 单户用电数据，用前一日同
 
 ## 项目材料
 
-- [四页项目报告](提交材料/01_项目报告.pdf) · [文字版](提交材料/01_项目报告.md)
-- [完整实验结果](提交材料/03_实验结果/README_结果口径.md) · [流程图与预测诊断](提交材料/05_图示与诊断/README.md)
-- [提交材料压缩包](提交材料.zip) · [文件校验清单](提交材料/文件校验清单.sha256)
+- [四页项目报告](最终材料/01_项目报告.pdf) · [文字版](最终材料/01_项目报告.md)
+- [完整实验结果](最终材料/03_实验结果/README_结果口径.md) · [流程图与预测诊断](最终材料/05_图示与诊断/README.md)
+- [最终材料压缩包](最终材料.zip) · [文件校验清单](最终材料/文件校验清单.sha256)
 
-![预测与回测流程](提交材料/05_图示与诊断/fig_roadmap.png)
+![预测与回测流程](最终材料/05_图示与诊断/fig_roadmap.png)
 
 ## 运行
 
 安装 Python 3.12 和 [uv](https://docs.astral.sh/uv/)，在项目根目录执行：
 
 ```powershell
-git clone https://github.com/hpWei-asuka/mcm-icm-2027.git
-cd mcm-icm-2027
+git clone https://github.com/hpWei-asuka/load-forecasting-storage-dispatch.git
+cd load-forecasting-storage-dispatch
 uv sync --locked
 uv run load-storage doctor
 uv run load-storage download-data
