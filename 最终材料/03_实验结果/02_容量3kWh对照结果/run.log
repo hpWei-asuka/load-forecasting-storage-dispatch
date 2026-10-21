@@ -1,9 +1,0 @@
-2026-10-20 19:33:40,080 INFO 读取数据 D:\大学\竞赛\2027美赛\代码组\data\raw\household_power_consumption.txt
-2026-10-20 19:33:49,802 INFO 2010-01-04 no_storage=valid, fixed_rule=replay_infeasible, optimized=replay_infeasible
-2026-10-20 19:33:49,865 INFO 2010-01-05 no_storage=valid, fixed_rule=valid, optimized=replay_infeasible
-2026-10-20 19:33:49,927 INFO 2010-01-06 no_storage=valid, fixed_rule=valid, optimized=replay_infeasible
-2026-10-20 19:33:49,996 INFO 2010-01-07 no_storage=valid, fixed_rule=replay_infeasible, optimized=valid
-2026-10-20 19:33:50,065 INFO 2010-01-08 no_storage=valid, fixed_rule=valid, optimized=valid
-2026-10-20 19:33:50,132 INFO 2010-01-09 no_storage=valid, fixed_rule=valid, optimized=valid
-2026-10-20 19:33:50,200 INFO 2010-01-10 no_storage=valid, fixed_rule=valid, optimized=valid
-2026-10-20 19:33:56,102 INFO 共同有效 3/7 天；失败 4 天

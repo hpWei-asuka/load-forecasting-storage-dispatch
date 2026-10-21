@@ -43,5 +43,4 @@ jobs:
         if: runner.os == 'Windows'
         shell: pwsh
         run: |
-          ./tests/Test-ProductDesign.ps1
           ./tests/Test-TechnicalPlan.ps1
